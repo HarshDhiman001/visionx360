@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./index.css";
+import logo from "./assets/logo.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Header() {
       <div className="vx-container">
         <div className="vx-row">
           <a href="/" className="vx-brand">
-            <img src="src/assets/logo.png" alt="" />
+            <img src={logo} alt="VisionX Logo" />
           </a>
 
           <nav className="vx-nav" aria-label="Main navigation">
