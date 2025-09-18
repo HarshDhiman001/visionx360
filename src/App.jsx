@@ -27,8 +27,8 @@ function App() {
       <Header/>
       <Hero/>
       {/* <Feature/> */}
-      {/* <About/> */}
-      {/* <Team/> */}
+      <About/>
+      <Team/>
       {/* <DemosHero/> */}
       <Results/>
       {/* <Trusted/> */}
