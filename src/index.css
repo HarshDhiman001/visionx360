@@ -1662,3 +1662,31 @@ section.vx-testimonial-hero:after {
 
 
 /* end of file */
+
+
+@media (min-width: 768px) {
+  .vx-hero-ctas {
+    flex-direction: row; /* buttons side by side */
+    gap: 16px; /* optional spacing */
+  }
+
+  section.vx-about {
+    padding: 60px 0; /* restore spacing */
+  }
+
+  .vx-container {
+    padding: 0 24px; /* restore container padding */
+  }
+
+  .vx-team-header {
+    flex-direction: row; /* title + subtitle side by side */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .vx-results-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
