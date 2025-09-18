@@ -1666,8 +1666,7 @@ section.vx-testimonial-hero:after {
 
 @media (min-width: 768px) {
   .vx-hero-ctas {
-    flex-direction: row; /* buttons side by side */
-    gap: 16px; /* optional spacing */
+    flex-direction: column;
   }
 
   section.vx-about {
