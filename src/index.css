@@ -2,6 +2,31 @@
 
 /* Google font */
 @import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;500;600;700&display=swap');
+/* add near top of src/index.css */
+@font-face {
+  font-family: 'Inter';
+  src: url('/visionx360/fonts/Inter-Regular.woff2') format('woff2'),
+       url('/visionx360/fonts/Inter-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/visionx360/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* feather / material if needed */
+@font-face {
+  font-family: 'FeatherIcons';
+  src: url('/visionx360/fonts/feather.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Base / Variables */
 :root{
