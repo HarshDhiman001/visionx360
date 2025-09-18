@@ -1,0 +1,189 @@
+/* hero slider - drop into your main stylesheet import */
+.vx-hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* each slide fills viewport - we position them absolutely & show only active */
+.vx-slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 700ms ease, transform 700ms ease;
+  display: flex;
+  align-items: center;
+}
+.vx-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* subtle overlay for legibility */
+.vx-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,18,24,0.05) 0%, rgba(0,0,0,0.6) 70%);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* container to hold left and right content */
+.vx-slide-inner {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  align-items: center;
+  gap: 40px;
+  padding: 64px;
+}
+
+/* left column */
+.vx-hero-left {
+  color: white;
+  max-width: 900px;
+}
+.vx-hero-prefix {
+  text-transform: uppercase;
+  opacity: 0.85;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.vx-hero-title {
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.95;
+  margin: 0 0 18px 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.vx-hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 60ch;
+  margin-bottom: 22px;
+}
+.vx-hero-cta {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+/* right column - cards */
+.vx-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+/* horizontal cards scroller */
+.cards-wrapper {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+.cards-wrapper::-webkit-scrollbar { height: 8px; }
+.cards-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 6px; }
+
+/* single card */
+.hero-card {
+  scroll-snap-align: start;
+  min-width: 240px;
+  width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 6px 30px rgba(2,6,23,0.45);
+  display: flex;
+  flex-direction: column;
+  transition: transform 300ms ease;
+}
+.hero-card:hover { transform: translateY(-8px) scale(1.02); }
+
+/* image area */
+.hero-card-image {
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* card body */
+.hero-card-body {
+  padding: 12px;
+  color: white;
+}
+.hero-card-place { font-size: 12px; opacity: 0.8; }
+.hero-card-title { font-size: 16px; font-weight: 700; margin-top: 6px; }
+.hero-card-stars { color: #ffd166; margin-top: 8px; font-size: 12px; }
+
+/* small controls under cards */
+.cards-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+.control-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.dots { display:flex; gap:8px; align-items:center; }
+.dot { width:8px; height:8px; background:rgba(255,255,255,0.1); border-radius:50%; cursor:pointer; }
+.dot:hover { background: rgba(255,255,255,0.2); }
+
+/* main nav (big arrows + dots) */
+.vx-nav.sliderNav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 28px;
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  z-index: 6;
+}
+.vx-prev, .vx-next {
+  background: rgba(255,255,255,0.06);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  font-size: 20px;
+}
+.vx-dots { display:flex; gap:10px; align-items:center; }
+.vx-dot { width:10px; height:10px; background: rgba(255,255,255,0.12); border-radius:50%; cursor:pointer; }
+.vx-dot.active { background: #fff; transform: scale(1.15); }
+
+/* responsive */
+@media (max-width: 1024px) {
+  .vx-slide-inner { grid-template-columns: 1fr 1fr; padding: 30px; }
+  .vx-hero-right { display: none; } /* hide right cards on small screens; show a simplified small control if you want */
+}
+@media (max-width: 640px) {
+  .vx-slide-inner { grid-template-columns: 1fr; padding: 24px; }
+  .vx-hero-title { font-size: 36px; }
+  .vx-nav { bottom: 18px; }
+}
