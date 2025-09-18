@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <Header/>
-      <Hero/>
+      {/* <Hero/> */}
       {/* <Feature/> */}
       <About/>
       <Team/>
