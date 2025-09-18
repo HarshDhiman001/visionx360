@@ -7,7 +7,7 @@ import React from "react";
 */
 
 const members = [
-  { name: "Harsh D.", role: "Founder - CEO", img: "https://github.com/HarshDhiman001/visionx360/blob/main/src/assets/ceo.jpeg" },
+  { name: "Harsh D.", role: "Founder - CEO", img: "/ceo.jpeg" },
   { name: "Preeti D.", role: "Co-Founder - COO", img: "https://i.pinimg.com/1200x/49/22/3c/49223c4160a61dadc6556851bcc39c32.jpg" },
   { name: "Guy Hawkins", role: "Executive Admin", img: "https://i.pinimg.com/1200x/49/22/3c/49223c4160a61dadc6556851bcc39c32.jpg" },
   { name: "Cody Fisher", role: "Office Manager", img: "https://i.pinimg.com/1200x/49/22/3c/49223c4160a61dadc6556851bcc39c32.jpg" },
